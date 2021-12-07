@@ -26,10 +26,6 @@ def reverse():
     my_list.reverse()
 
 
-# def print():
-#     print(my_list)
-
-
 activity_dic = {'insert': insert, 'remove': remove, 'append': append,
                 'sort': sort, 'pop': pop, 'reverse': reverse}
 
