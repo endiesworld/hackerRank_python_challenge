@@ -37,9 +37,9 @@ def operation(n):
     if activities[0] == 'print':
         print(my_list)
     elif len(activities) == 3:
-        activity_dic[activities[0]](int(activities[1]), activities[2])
+        activity_dic[activities[0]](int(activities[1]), int(activities[2]))
     elif len(activities) == 2:
-        activity_dic[activities[0]](activities[1])
+        activity_dic[activities[0]](int(activities[1]))
     else:
         activity_dic[activities[0]]()
 
