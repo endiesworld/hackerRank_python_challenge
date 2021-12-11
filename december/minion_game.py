@@ -142,3 +142,6 @@ elif (player_1['score'] < player_2['score']):
 else:
     winner = 'Draw'
 print(winner)
+
+
+# START FUNCTION
