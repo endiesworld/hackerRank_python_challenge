@@ -1,4 +1,5 @@
 from collections import deque
+import heapq
 
 items = [1, 8, 2, 23, 7, 9]
 """
@@ -44,6 +45,12 @@ my_deque_2 = deque(maxlen=3)
 for i in range(10):
     my_deque_2.appendleft(i)
     print(my_deque_2)
-
 """
 
+"""
+# PROBLEM : make a list of the largest or smallest N items in a collection.
+# Both items also accepts key parameter
+nums = [1, 2, 2, 23, 7, -4, 18, 23, 42, 37, 2]
+print(heapq.nlargest(3, nums))  # Prints [42, 37, 23]
+print(heapq.nsmallest(3, nums))
+"""
