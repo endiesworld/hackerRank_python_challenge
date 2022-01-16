@@ -59,3 +59,19 @@ tests.append(
     }
 )
 
+# Solution(1)
+# 1.1 Algorithm: Linear Search
+# 12 Complexity: O(N)
+
+
+def loacate_query(cards, query):
+    query_location = -1
+    for index, card in enumerate(cards):
+        if card == query:
+            query_location = index
+            break
+    return query_location
+
+
+print(loacate_query(**tests[0]["input"]) == tests[0]["output"])
+
