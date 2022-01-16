@@ -61,7 +61,8 @@ tests.append(
 
 # Solution(1)
 # 1.1 Algorithm: Linear Search
-# 12 Complexity: O(N)
+# 1.2 Complexity: O(N)
+print(f"You have {len(tests)} numbers of test cases")
 
 
 def loacate_query(cards, query):
@@ -73,5 +74,46 @@ def loacate_query(cards, query):
     return query_location
 
 
+print("*** Test case with Linear Search Algorith ***")
 print(loacate_query(**tests[0]["input"]) == tests[0]["output"])
 
+# Solution(2)
+# 2.1 Algorithm: Binary Search
+# 2.2 Complexity:
+
+
+def test_location(cards, query, mid):
+    mid_number = cards[mid]
+    print("mid:", mid, ", mid_number:", mid_number)
+    if mid_number == query:
+        if mid - 1 >= 0 and cards[mid - 1] == query:
+            return "left"
+        else:
+            return "found"
+    elif mid_number < query:
+        return "left"
+    else:
+        return "right"
+
+
+def locate_card(cards, query):
+    lo, hi = 0, len(cards) - 1
+
+    while lo <= hi:
+        print("lo:", lo, ", hi:", hi)
+        mid = (lo + hi) // 2
+        result = test_location(cards, query, mid)
+
+        if result == "found":
+            return mid
+        elif result == "left":
+            hi = mid - 1
+        elif result == "right":
+            lo = mid + 1
+    return -1
+
+
+print("*** Test case with Binary Search Algorithm ***")
+
+for i in range(len(tests)):
+    print(loacate_query(**tests[i]["input"]) == tests[i]["output"])
